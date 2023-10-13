@@ -23,13 +23,21 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../Desktop/cryptopp/x64/Output/release/ -lcryptlib
-else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../Desktop/cryptopp/x64/Output/debug/ -lcryptlib
 
-INCLUDEPATH += $$PWD/../../Desktop/cryptopp/x64/Output/Release
-DEPENDPATH += $$PWD/../../Desktop/cryptopp/x64/Output/Release
 
-win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../Desktop/cryptopp/x64/Output/release/libcryptlib.a
-else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../Desktop/cryptopp/x64/Output/debug/libcryptlib.a
-else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/../../Desktop/cryptopp/x64/Output/release/cryptlib.lib
-else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/../../Desktop/cryptopp/x64/Output/debug/cryptlib.lib
+win32: LIBS += -L$$PWD/libCrypt/cryptopp/x64/Output/Release/ -lcryptlib
+
+INCLUDEPATH += $$PWD/libCrypt/cryptopp
+DEPENDPATH += $$PWD/libCrypt/cryptopp
+
+win32-g++: PRE_TARGETDEPS += $$PWD/libCrypt/cryptopp/x64/Output/Release/cryptlib.lib
+
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/libCrypt/x64/release/ -lchiffrement1
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/libCrypt/x64/debug/ -lchiffrement1
+
+INCLUDEPATH += $$PWD/libCrypt/chiffrement1
+DEPENDPATH += $$PWD/libCrypt/chiffrement1
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libCrypt/x64/release/chiffrement1.lib
+win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libCrypt/x64/debug/chiffrement1.lib
