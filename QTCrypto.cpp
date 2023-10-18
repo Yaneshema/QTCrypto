@@ -64,7 +64,7 @@ void QTCrypto::on_aesGenerate_clicked()
 void QTCrypto::on_encrypt_clicked()
 {
 
-    if (QFileInfo::exists(ui->file->text())) {
+
 
         QDateTime currentDateTime = QDateTime::currentDateTime();
         QString formattedDate = currentDateTime.toString("ddMMyyhhmmss");
@@ -89,19 +89,10 @@ void QTCrypto::on_encrypt_clicked()
             rsa.chiffrementFichier(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Encrypt/RSA/" + filename + "_encrypted_" + formattedDate.toStdString(), 0);
             break;
         }
-    }
-
-    else {
-
-        cout << "cheh" << endl;
-    }
 }
 
 void QTCrypto::on_Decrypt_clicked()
 {
-
-    if (QFileInfo::exists(ui->file->text())) {
-
 
         QDateTime currentDateTime = QDateTime::currentDateTime();
         QString formattedDate = currentDateTime.toString("ddMMyyhhmmss");
@@ -126,12 +117,6 @@ void QTCrypto::on_Decrypt_clicked()
            rsa.dechiffrementFichier(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Decrypt/RSA/" + filename + "_decrypted_" + formattedDate.toStdString(), 0);
            break;
         }
-    }
-
-    else {
-
-        cout << "cheh" << endl;
-    }
 }
 
 /***************************************************/
