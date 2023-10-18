@@ -1,5 +1,9 @@
 # Encryption-Tool
 
+[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://github.com/command-z3r0?tab=repositories) 
+
+[Version: 1.0]
+
 **Description :** Outil pour calculer le hachage, chiffrer, déchiffrer en AES et RSA
 
 <img alt="Encryption-Tool" align="center" src="https://raw.githubusercontent.com/Yaneshema/QTCrypto/main/appli.png?token=GHSAT0AAAAAACHJ7XOKLEOMDEVUFRP4PJOYZJP7EQQ">
@@ -29,5 +33,11 @@
 5. Utilisez le bouton "Explorer" pour sélectionner le fichier.
 6. Utilisez le bouton "Encrypt / Decrypt" pour effectuer les opérations de chiffrement ou de déchiffrement.
 
+Testé sur :
+ 
+ :heavy_check_mark: Windows
 
+-----------------------------------------------------------------------------------------------------
+#### ⚠️🚧! THIS IS FOR STRICTLY EDUCATIONAL PURPOSES, I AM NOT RESPONSIBLE FOR YOUR USE OF THIS !
+------------------------------------------------------------------------------------------------------
 
