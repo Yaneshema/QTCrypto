@@ -46,7 +46,9 @@ private slots:
 
     void on_hash_clicked();
 
-    void on_rsaGenerate_2_clicked();
+    void on_clipboard_clicked();
+
+    void hideLabel();
 
 private:
     Ui::QTCrypto *ui;

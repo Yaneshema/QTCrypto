@@ -5,8 +5,10 @@
 
 #include <iostream>
 #include <filesystem>
+
 #include <QFileDialog>
 #include <QDateTime>
+#include <QTimer>
 #include <QClipboard>
 
 using namespace std;
@@ -19,6 +21,7 @@ QTCrypto::QTCrypto(QWidget *parent) : QMainWindow(parent), ui(new Ui::QTCrypto)
     RsaGestion rsa;
     HashGestion sha;
     ui->mode->setValue(0);
+    ui->copy->hide();
 }
 
 QTCrypto::~QTCrypto()
@@ -139,7 +142,6 @@ void QTCrypto::on_mode_valueChanged(int value)
     this->mode = value;
 }
 
-
 void QTCrypto::on_hash_clicked()
 {
     QString input = QFileDialog::getOpenFileName(this, tr("Select a file to calculate hash"),"/home", tr("Any file (*)"));
@@ -150,11 +152,19 @@ void QTCrypto::on_hash_clicked()
     ui->result->setText(Hash);
 }
 
-
-void QTCrypto::on_rsaGenerate_2_clicked()
+void QTCrypto::on_clipboard_clicked()
 {
     QClipboard *clipboard = QGuiApplication::clipboard();
     QString originalText = clipboard->text();
 
     clipboard->setText(ui->result->text());
+
+    ui->copy->show();
+
+    QTimer::singleShot(1000, this, &QTCrypto::hideLabel);
+}
+
+void QTCrypto::hideLabel() {
+
+    ui->copy->hide();
 }
