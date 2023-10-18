@@ -53,6 +53,8 @@ private slots:
 
     void hideLabel();
 
+    void on_database_clicked();
+
 private:
     Ui::QTCrypto *ui;
 };

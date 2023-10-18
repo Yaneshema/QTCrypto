@@ -10,6 +10,7 @@
 #include <QDateTime>
 #include <QTimer>
 #include <QClipboard>
+#include <QDesktopServices>
 
 using namespace std;
 namespace fs = filesystem;
@@ -63,60 +64,73 @@ void QTCrypto::on_aesGenerate_clicked()
 void QTCrypto::on_encrypt_clicked()
 {
 
-    QDateTime currentDateTime = QDateTime::currentDateTime();
-    QString formattedDate = currentDateTime.toString("ddMMyyhhmmss");
+    if (QFileInfo::exists(ui->file->text())) {
 
-    QString input = ui->encryptInput->text();
-    string str = input.toStdString();
-    size_t file = str.find_last_of("/\\");
-    string filename = str.substr(file + 1);
+        QDateTime currentDateTime = QDateTime::currentDateTime();
+        QString formattedDate = currentDateTime.toString("ddMMyyhhmmss");
 
-    size_t encryptedPos = filename.find("_encrypted");
-    filename = filename.substr(0, encryptedPos);
+        QString input = ui->encryptInput->text();
+        string str = input.toStdString();
+        size_t file = str.find_last_of("/\\");
+        string filename = str.substr(file + 1);
 
+        size_t encryptedPos = filename.find("_encrypted");
+        filename = filename.substr(0, encryptedPos);
 
-    cout << "this->mode"<< this->mode << endl;
-    switch(this->mode) {
+        switch(this->mode) {
 
-    case 0:
+        case 0:
 
-        std::cout << "test" << endl;
-        aes.EncryptFileAES256(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Encrypt/AES/" + filename + "_encrypted_" + formattedDate.toStdString());
-        break;
+            aes.EncryptFileAES256(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Encrypt/AES/" + filename + "_encrypted_" + formattedDate.toStdString());
+            break;
 
-    case 1:
-        cout << "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Encrypt/RSA/" + filename + "_encrypted_" + formattedDate.toStdString() << endl;
+        case 1:
 
-        rsa.chiffrementFichier(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Encrypt/RSA/" + filename + "_encrypted_" + formattedDate.toStdString(), 0);
-        break;
+            rsa.chiffrementFichier(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Encrypt/RSA/" + filename + "_encrypted_" + formattedDate.toStdString(), 0);
+            break;
+        }
+    }
+
+    else {
+
+        cout << "cheh" << endl;
     }
 }
 
 void QTCrypto::on_Decrypt_clicked()
 {
 
-    QDateTime currentDateTime = QDateTime::currentDateTime();
-    QString formattedDate = currentDateTime.toString("ddMMyyhhmmss");
+    if (QFileInfo::exists(ui->file->text())) {
 
-    QString input = ui->encryptInput->text();
-    string str = input.toStdString();
-    size_t file = str.find_last_of("/\\");
-    string filename = str.substr(file + 1);
 
-    size_t encryptedPos = filename.find("_encrypted");
-    filename = filename.substr(0, encryptedPos);
-    cout << "Decripte this->mode"<< this->mode << endl;
-    switch(this->mode) {
+        QDateTime currentDateTime = QDateTime::currentDateTime();
+        QString formattedDate = currentDateTime.toString("ddMMyyhhmmss");
 
-    case 0:
+        QString input = ui->encryptInput->text();
+        string str = input.toStdString();
+        size_t file = str.find_last_of("/\\");
+        string filename = str.substr(file + 1);
 
-        aes.DecryptFileAES256(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Decrypt/AES/" + filename + "_decrypted_" + formattedDate.toStdString());
-        break;
+        size_t encryptedPos = filename.find("_encrypted");
+        filename = filename.substr(0, encryptedPos);
 
-    case 1:
-        cout << "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Encrypt/RSA/" + filename + "_encrypted_" + formattedDate.toStdString() << endl;
-       rsa.dechiffrementFichier(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Decrypt/RSA/" + filename + "_decrypted_" + formattedDate.toStdString(), 0);
-        break;
+        switch(this->mode) {
+
+        case 0:
+
+            aes.DecryptFileAES256(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Decrypt/AES/" + filename + "_decrypted_" + formattedDate.toStdString());
+            break;
+
+        case 1:
+
+           rsa.dechiffrementFichier(str, "C:/Users/SNIR_admin/Documents/QTCrypto/DB/Decrypt/RSA/" + filename + "_decrypted_" + formattedDate.toStdString(), 0);
+           break;
+        }
+    }
+
+    else {
+
+        cout << "cheh" << endl;
     }
 }
 
@@ -174,3 +188,9 @@ void QTCrypto::hideLabel() {
 
     ui->copy->hide();
 }
+
+void QTCrypto::on_database_clicked()
+{
+    QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/SNIR_admin/Documents/QTCrypto/DB"));
+}
+
