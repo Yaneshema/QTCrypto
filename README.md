@@ -4,7 +4,7 @@
 
 [Version: 1.0]
 
-**Description :** Outil pour calculer le hachage, chiffrer, déchiffrer en AES et RSA
+**Description :** Outil pour calculer le hash, chiffrer, déchiffrer en AES et RSA
 
 <img alt="Encryption-Tool" align="center" src="https://raw.githubusercontent.com/Yaneshema/QTCrypto/main/appli.png">
 
