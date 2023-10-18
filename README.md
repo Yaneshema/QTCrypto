@@ -1,10 +1,10 @@
 # Readme (Lisez-moi)
 
 **Description :** Outil pour calculer le hachage, chiffrer, déchiffrer en AES et RSA
-<img alt="blackbird-cli" align="center" src="https://raw.githubusercontent.com/Yaneshema/QTCrypto/main/appli.png?token=GHSAT0AAAAAACHJ7XOKDZTN3ZW3Q6U7I66KZJP6XWA">
+<img alt="Encryption-Tool" align="center" src="https://raw.githubusercontent.com/Yaneshema/QTCrypto/main/appli.png?token=GHSAT0AAAAAACHJ7XOKDZTN3ZW3Q6U7I66KZJP6XWA">
 ## Fonctionnalités
 
-### Hachage :
+### Hach SHA256 :
 
 1. Appuyez sur le bouton "Calculate hash file" pour sélectionner et calculer le hachage du fichier.
 2. Appuyez sur le bouton "copy" pour copier le résultat dans le presse-papiers.
@@ -26,3 +26,6 @@
 4. Déplacez le commutateur vers le mode RSA.
 5. Utilisez le bouton "Explorer" pour sélectionner le fichier.
 6. Utilisez le bouton "Encrypt / Decrypt" pour effectuer les opérations de chiffrement ou de déchiffrement.
+
+
+
