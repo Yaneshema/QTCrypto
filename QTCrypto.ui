@@ -22,7 +22,7 @@
      <rect>
       <x>130</x>
       <y>450</y>
-      <width>501</width>
+      <width>511</width>
       <height>80</height>
      </rect>
     </property>
@@ -66,8 +66,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset>
-         <normaloff>folder.png</normaloff>folder.png</iconset>
+        <iconset resource="../build-QTCrypto-Desktop_Qt_6_6_0_MSVC2019_64bit-Release/release/qmake_qmake_immediate.qrc">
+         <normaloff>:/fdr.png</normaloff>:/fdr.png</iconset>
        </property>
       </widget>
      </item>
@@ -364,7 +364,7 @@ background-color: rgb(0, 0, 0);</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="rsaGenerate_2">
+   <widget class="QPushButton" name="clipboard">
     <property name="geometry">
      <rect>
       <x>660</x>
@@ -374,7 +374,10 @@ background-color: rgb(0, 0, 0);</string>
      </rect>
     </property>
     <property name="toolTip">
-     <string extracomment="test"/>
+     <string/>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);</string>
@@ -383,8 +386,8 @@ background-color: rgb(0, 0, 0);</string>
      <string/>
     </property>
     <property name="icon">
-     <iconset>
-      <normaloff>copy2.png</normaloff>copy2.png</iconset>
+     <iconset resource="../build-QTCrypto-Desktop_Qt_6_6_0_MSVC2019_64bit-Release/release/qmake_qmake_immediate.qrc">
+      <normaloff>:/cb.png</normaloff>:/cb.png</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -406,6 +409,8 @@ background-color: rgb(0, 0, 0);</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../build-QTCrypto-Desktop_Qt_6_6_0_MSVC2019_64bit-Release/release/qmake_qmake_immediate.qrc"/>
+ </resources>
  <connections/>
 </ui>

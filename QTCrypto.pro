@@ -18,6 +18,10 @@ HEADERS += \
 FORMS += \
     QTCrypto.ui
 
+RESOURCES += \
+    cb.png \
+    fdr.png
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
@@ -41,3 +45,6 @@ DEPENDPATH += $$PWD/libCrypt/chiffrement1
 
 win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libCrypt/x64/release/chiffrement1.lib
 win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libCrypt/x64/debug/chiffrement1.lib
+
+DISTFILES += \
+    fdr.png
