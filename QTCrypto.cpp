@@ -158,4 +158,3 @@ void QTCrypto::on_rsaGenerate_2_clicked()
 
     clipboard->setText(ui->result->text());
 }
-
