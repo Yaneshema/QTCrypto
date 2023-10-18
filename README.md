@@ -1,4 +1,4 @@
-# Readme (Lisez-moi)
+##Encryption-Tool
 
 **Description :** Outil pour calculer le hachage, chiffrer, déchiffrer en AES et RSA
 <img alt="Encryption-Tool" align="center" src="https://raw.githubusercontent.com/Yaneshema/QTCrypto/main/appli.png?token=GHSAT0AAAAAACHJ7XOKDZTN3ZW3Q6U7I66KZJP6XWA">
