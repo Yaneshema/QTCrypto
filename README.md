@@ -1,7 +1,7 @@
 # Readme (Lisez-moi)
 
 **Description :** Outil pour calculer le hachage, chiffrer, déchiffrer en AES et RSA
-
+<img alt="blackbird-cli" align="center" src="https://raw.githubusercontent.com/Yaneshema/QTCrypto/main/appli.png">
 ## Fonctionnalités
 
 ### Hachage :
