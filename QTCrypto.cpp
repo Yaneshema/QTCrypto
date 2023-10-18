@@ -16,12 +16,18 @@ namespace fs = filesystem;
 
 QTCrypto::QTCrypto(QWidget *parent) : QMainWindow(parent), ui(new Ui::QTCrypto)
 {
+
+
     ui->setupUi(this);
     AesGestion aes;
     RsaGestion rsa;
     HashGestion sha;
+
     ui->mode->setValue(0);
     ui->copy->hide();
+
+    setWindowTitle("Encryption Tool");
+
 }
 
 QTCrypto::~QTCrypto()

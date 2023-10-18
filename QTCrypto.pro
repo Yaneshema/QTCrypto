@@ -20,7 +20,8 @@ FORMS += \
 
 RESOURCES += \
     cb.png \
-    fdr.png
+    fdr.png \
+    secu.png \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -47,4 +48,5 @@ win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$PWD/libCrypt/x64/r
 win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$PWD/libCrypt/x64/debug/chiffrement1.lib
 
 DISTFILES += \
-    fdr.png
+    fdr.png \
+    secu.png

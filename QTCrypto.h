@@ -2,6 +2,8 @@
 #define QTCRYPTO_H
 
 #include <QMainWindow>
+#include <QIcon>
+
 #include "AesGestion.h"
 #include "RsaGestion.h"
 #include "HashGestion.h"
@@ -20,6 +22,7 @@ public:
     AesGestion aes;
     RsaGestion rsa;
     HashGestion sha;
+
     int mode;
 
 private slots:
